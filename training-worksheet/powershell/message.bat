@@ -1,0 +1,2 @@
+ msg %username% password changed
+

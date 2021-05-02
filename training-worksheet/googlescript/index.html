@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <base target="_top">
+<script>
+  
+function submitPoll(){
+    document.getElementById("lista").disabled = true;
+    setTimeout(function() {
+        document.getElementById("lista").disabled = false;
+    }, 15000); 
+}
+
+function submitPollreset(){
+    document.getElementById("reset").disabled = true;
+    setTimeout(function() {
+        document.getElementById("reset").disabled = false;
+    }, 2000);
+}
+
+document.getElementById("lista").addEventListener("click", submitPoll);
+document.getElementById("reset").addEventListener("click", submitPollreset);
+
+function download(type) {
+    google.script.run
+      .withSuccessHandler(({ data, filename }) => {
+        if (data && filename) {
+          const a = document.createElement("a");
+          document.body.appendChild(a);
+          a.download = filename;
+          a.href = data;
+          a.click();
+        }
+      })
+      .createDataUrl(type);
+}
+ 
+function resetpass() {
+    google.script.run
+      .reset();   
+}
+
+</script>
+<style>
+
+ .title {
+  font-weight : bold ;
+  color:blue;
+ }
+
+  .info {
+  font-weight : bold ;
+  color:#8B0000;
+ }
+
+
+    .button {
+  position:relative;
+  width: auto;
+  font-size: 0.9em;
+  font-weight : bold ;
+  color:#ecf0f1;
+  text-decoration:none;
+  border-radius:5px;
+  border:solid 1px #f39c12;
+  background:#e67e22;
+  text-align:center;
+  padding:16px 18px 14px;
+
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s;
+
+  -webkit-box-shadow: 0px 6px 0px #d35400;
+  -moz-box-shadow: 0px 6px 0px #d35400;
+  box-shadow: 0px 6px 0px #d35400;
+}
+
+.button:active{
+  -webkit-box-shadow: 0px 2px 0px #d35400;
+  -moz-box-shadow: 0px 2px 0px #d35400;
+  box-shadow: 0px 2px 0px #d35400;
+  position:relative;
+  top:4px;
+}
+
+   </style>
+ </head>
+ <body>
+   <hr>
+   <h3 class="title">Alterar CPFs</h3>
+   <h4>Description.</h4>
+   <p>
+     <input type="button" class="button" id="reset" value="Alterar CPFs" onclick="resetpass();" />
+   </p>
+    <h4>Download CSV</h4>
+   <hr>
+    <h3 class="title">Apply Pass</h3>
+   <p>
+     <input type="button" class="button" id="lista" value=Download and Apply" onclick="download('csv');" />
+   </p>
+    <h4>Ao clicar no download, as senhas da planilha serão efetivadas nos servidores.</h4>
+    <h4 class="info"></h4>
+   <hr>
+
+
+ </body>
+</html>
+
+
+
+ 
+
