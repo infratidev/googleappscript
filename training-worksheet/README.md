@@ -14,3 +14,7 @@
 - Através de um subsystem Linux dentro do ambiente, com o gateway de ts instalado, ao clicar no botão de download, fazer a ação da primeira etapa, e inserir os registros de usuario e senha no arquivo de configuração do gateway de ts, no caso, guacamole
 
 ** powershell diretorio - link to powershell repository **
+
+#### Script powershell
+
+  - [Script powershell projeto](https://github.com/infratidev/powershell/tree/main/ps-training-worksheet)
