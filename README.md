@@ -2,6 +2,13 @@
 
 ## 📋 infratidev
 
+### Contents 
+  - [bot-azure](bot-azure/)
+  - [bot-infra](bot-infra/)
+  - [bot-infranews](bot-infranews/)
+  - [training-worksheet](training-worksheet/)
+
+     
 #### Bot-Infra
 - Criação de bot via Google App Script para disparos de email para gerenciamento de chamados via GLPI
 #### Bot-Infratinews
